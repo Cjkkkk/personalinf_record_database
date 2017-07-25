@@ -1,0 +1,12 @@
+C:\Users\Administrator\我的文档\Visual Studio 2017\Projects\personalinf\personalinf\bin\Release\db\personalinf.sqlite
+C:\Users\Administrator\我的文档\Visual Studio 2017\Projects\personalinf\personalinf\bin\Release\personalinf.exe.config
+C:\Users\Administrator\我的文档\Visual Studio 2017\Projects\personalinf\personalinf\bin\Release\personalinf.exe
+C:\Users\Administrator\我的文档\Visual Studio 2017\Projects\personalinf\personalinf\bin\Release\personalinf.pdb
+C:\Users\Administrator\我的文档\Visual Studio 2017\Projects\personalinf\personalinf\bin\Release\System.Data.SQLite.dll
+C:\Users\Administrator\我的文档\Visual Studio 2017\Projects\personalinf\personalinf\bin\Release\System.Data.SQLite.xml
+C:\Users\Administrator\我的文档\Visual Studio 2017\Projects\personalinf\personalinf\obj\Release\personalinf.Form1.resources
+C:\Users\Administrator\我的文档\Visual Studio 2017\Projects\personalinf\personalinf\obj\Release\personalinf.Form2.resources
+C:\Users\Administrator\我的文档\Visual Studio 2017\Projects\personalinf\personalinf\obj\Release\personalinf.Properties.Resources.resources
+C:\Users\Administrator\我的文档\Visual Studio 2017\Projects\personalinf\personalinf\obj\Release\personalinf.csproj.GenerateResource.Cache
+C:\Users\Administrator\我的文档\Visual Studio 2017\Projects\personalinf\personalinf\obj\Release\personalinf.exe
+C:\Users\Administrator\我的文档\Visual Studio 2017\Projects\personalinf\personalinf\obj\Release\personalinf.pdb
