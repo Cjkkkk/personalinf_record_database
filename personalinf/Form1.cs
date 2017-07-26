@@ -30,6 +30,8 @@ namespace personalinf
             person.Pic = "";
             OpenFileDialog filedia = new OpenFileDialog();
             filedia.InitialDirectory = "C:\\";
+            filedia.Filter = "图像文件|*.jpg;*.bmp;*.gif;*.png";
+            filedia.Multiselect = false;
             if (filedia.ShowDialog() == DialogResult.OK)
             {
                 person.Pic = filedia.FileName;
@@ -60,6 +62,8 @@ namespace personalinf
             person.Pic = "";
             OpenFileDialog filedia = new OpenFileDialog();
             filedia.InitialDirectory = "C:\\";
+            filedia.Filter = "图像文件|*.jpg;*.bmp;*.gif;*.png";
+            filedia.Multiselect = false;
             if (filedia.ShowDialog() == DialogResult.OK)
             {
                 person.Pic = filedia.FileName;
@@ -91,16 +95,13 @@ namespace personalinf
            toolStripStatusLabel1.Text = "欢迎 " + textBox1.Text;
         }
 
-        //提交个人信息按钮事件
 
-        private void button2_Click(object sender, EventArgs e)
+
+        //提交个人信息按钮事件
+        public void saveinf()
         {
-           
-        
-      
-      
-            
-            if(radioButton1.Checked == true)
+
+            if (radioButton1.Checked == true)
             {
                 person.Sex = "男孩";
             }
@@ -109,27 +110,28 @@ namespace personalinf
                 person.Sex = "女孩";
             }
             //检查是否选择了兴趣爱好
-            foreach(Control i in groupBox1.Controls)
+            foreach (Control i in groupBox1.Controls)
             {
-                if(i is CheckBox)
+                if (i is CheckBox)
                 {
                     if (((CheckBox)i).Checked)
                     {
-                        
-                        person.Hobby = person.Hobby + i.Text+",";
+
+                        person.Hobby = person.Hobby + i.Text + ",";
                     }
                 }
             }
-         
-  
+
+
             //检查是否选择了户籍
-            foreach(TreeNode i in treeView1.Nodes)
+            foreach (TreeNode i in treeView1.Nodes)
             {
-                if (i.IsSelected) {
+                if (i.IsSelected)
+                {
                     person.Home = i.Text;
                 }
             }
-          
+
             //
 
             //检查剩余信息是否填写
@@ -137,7 +139,7 @@ namespace personalinf
             person.Birthday = dateTimePicker1.Text;
             person.Selfintr = richTextBox1.Text;
             person.Bloodtype = comboBox1.Text;
-           
+
             if (person.Hobby == string.Empty)
             {
                 MessageBox.Show("请选择一个兴趣爱好");
@@ -171,7 +173,8 @@ namespace personalinf
                 MessageBox.Show("填写完毕");
                 //数据库操作
                 connectToDatabase();
-               if (whether_already_exist(person.Name)){
+                if (whether_already_exist(person.Name))
+                {
                     filldata();
                 }
                 // printHighscores();      
@@ -180,8 +183,13 @@ namespace personalinf
                 {
                     savestate = 1;
                 }
-                
+
             }
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            saveinf();
           
         }
       
@@ -285,7 +293,7 @@ namespace personalinf
 
         private void 关闭ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            saveinf();
         }
 
         private void 退出ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -293,9 +301,43 @@ namespace personalinf
             this.Close();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+       
+        private void Form1_MouseUp(object sender, MouseEventArgs e)
         {
+            if (e.Button == System.Windows.Forms.MouseButtons.Right)
+            {
+                Point pos = new Point(e.X, e.Y);
+                contextMenuStrip3.Show(this, pos);
+            }
+        }
 
+        private void 打开文件对话框ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            person.Pic = "";
+            OpenFileDialog filedia = new OpenFileDialog();
+            filedia.InitialDirectory = "C:\\";
+            filedia.Filter = "图像文件|*.jpg;*.bmp;*.gif;*.png";
+            filedia.Multiselect = false;
+            if (filedia.ShowDialog() == DialogResult.OK)
+            {
+                person.Pic = filedia.FileName;
+                pictureBox1.Image = Image.FromFile(person.Pic);
+            }
+
+        }
+
+        private void 打开字体对话框ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.FontDialog fontDlg = new FontDialog();
+            fontDlg.ShowDialog();
+            listBox1.Font = fontDlg.Font;
+        }
+
+        private void 打开颜色对话框ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ColorDialog colordig = new ColorDialog();
+            colordig.ShowDialog();
+            listBox1.ForeColor = colordig.Color;
         }
 
        

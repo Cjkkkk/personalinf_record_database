@@ -18,6 +18,7 @@ namespace personalinf
         public Form2()
         {
             InitializeComponent();
+   
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -42,7 +43,10 @@ namespace personalinf
                 message = message + "生日 ：" + reader["Birthday"] + "\n" + "性别 ：" + reader["Sex"] + "\n";
                 message = message + "兴趣爱好 ：" + reader["Hobby"] + "\n" + "籍贯 ：" + reader["Home"] + "\n";
                 message = message + "自我介绍 ：" + reader["Selfintr"] + "\n" ;
-                MessageBox.Show(message);
+                Form3 result = new Form3(message,reader["Pic"].ToString(),this);
+                result.Show();
+                
+               
                
             }
             else

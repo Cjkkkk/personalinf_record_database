@@ -20,3 +20,4 @@ C:\Users\Administrator\我的文档\Visual Studio 2017\Projects\personalinf\pers
 C:\Users\Administrator\我的文档\Visual Studio 2017\Projects\personalinf\personalinf\bin\Debug\System.Data.SQLite.dll
 C:\Users\Administrator\我的文档\Visual Studio 2017\Projects\personalinf\personalinf\bin\Debug\System.Data.SQLite.xml
 C:\Users\Administrator\我的文档\Visual Studio 2017\Projects\personalinf\personalinf\bin\Debug\db\personalinf.sqlite
+C:\Users\Administrator\我的文档\Visual Studio 2017\Projects\personalinf\personalinf\obj\Debug\personalinf.Form3.resources
